@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
+        {% block stylesheets %}
+        {% endblock %}
+
+        {% block javascripts %}
+        {% endblock %}
+    </head>
+    <body>
+        <h2>Choose payment method</h2>
+        <form action="/pay" method="post">
+            <label for="paymentMethod">Select Payment Method:</label><br/>
+
+            <input type="radio" id="monobank" name="paymentMethod" value="monobank" />
+            <label for="monobank">Monobank</label><br/>
+
+            <input type="radio" id="pb" name="paymentMethod" value="pb" />
+            <label for="pb">PrivatBank</label><br/>
+
+            <input type="radio" id="stripe" name="paymentMethod" value="stripe" />
+            <label for="stripe">Stripe</label><br/>
+
+            <input type="submit" value="Pay">
+        </form>
+    </body>
+</html>
